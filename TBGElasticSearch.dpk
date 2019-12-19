@@ -1,0 +1,58 @@
+package TBGElasticSearch;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  dbrtl,
+  bindengine,
+  bindcomp,
+  RESTComponents,
+  DUPCORE;
+
+contains
+  TBGElasticSearch.Search.Interfaces in 'source\TBGElasticSearch.Search.Interfaces.pas',
+  TBGElasticSearch.JsonUtils in 'source\TBGElasticSearch.JsonUtils.pas',
+  TBGElasticSearch.Match in 'source\TBGElasticSearch.Match.pas',
+  TBGElasticSearch in 'source\TBGElasticSearch.pas',
+  TBGElasticSearch.Query in 'source\TBGElasticSearch.Query.pas',
+  TBGElasticSearch.REST in 'source\TBGElasticSearch.REST.pas',
+  TBGElasticSearch.Search in 'source\TBGElasticSearch.Search.pas',
+  TBGElasticSearch.Bool in 'source\TBGElasticSearch.Bool.pas',
+  TBGElasticSearch.Must in 'source\TBGElasticSearch.Must.pas',
+  TBGElasticSearch.Term in 'source\TBGElasticSearch.Term.pas',
+  TBGElasticSearch.Query.Filter in 'source\TBGElasticSearch.Query.Filter.pas',
+  Injection in 'source\Injection.pas',
+  TBGElasticSearch.Index.Interfaces in 'source\TBGElasticSearch.Index.Interfaces.pas',
+  TBGElasticSearch.Index in 'source\TBGElasticSearch.Index.pas',
+  TBGElasticSearch.Filter in 'source\TBGElasticSearch.Filter.pas',
+  TBGElasticSearch.Query.Should in 'source\TBGElasticSearch.Query.Should.pas',
+  TBGElasticSearch.Query.Bool.MustNot in 'source\TBGElasticSearch.Query.Bool.MustNot.pas',
+  TBGElasticSearch.Range in 'source\TBGElasticSearch.Range.pas';
+
+end.

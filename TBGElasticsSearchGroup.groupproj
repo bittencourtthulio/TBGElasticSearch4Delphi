@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4EB6A64C-C997-4CA8-9169-8291A39A9813}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TBGElasticSearch.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="sample\FMX\FMXElasticSeach.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TBGElasticSearch">
+        <MSBuild Projects="TBGElasticSearch.dproj"/>
+    </Target>
+    <Target Name="TBGElasticSearch:Clean">
+        <MSBuild Projects="TBGElasticSearch.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TBGElasticSearch:Make">
+        <MSBuild Projects="TBGElasticSearch.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXElasticSeach">
+        <MSBuild Projects="sample\FMX\FMXElasticSeach.dproj"/>
+    </Target>
+    <Target Name="FMXElasticSeach:Clean">
+        <MSBuild Projects="sample\FMX\FMXElasticSeach.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXElasticSeach:Make">
+        <MSBuild Projects="sample\FMX\FMXElasticSeach.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TBGElasticSearch;FMXElasticSeach"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TBGElasticSearch:Clean;FMXElasticSeach:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TBGElasticSearch:Make;FMXElasticSeach:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
